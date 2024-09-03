@@ -48,7 +48,7 @@ The data downloaded or scraped from those sources had to be cleaned before they 
 
 The data from ZipAtlas (ZipAtlas, 2020) was extracted directly from the website and once it was extracted there was no extra cleaning up done before the data was ready for the analysis. In order to extract the data BeautifulSoup was used to scrape the table with ZIP codes.
 
-![alt text](images/Picture1 - Sample of Houston Zip Code table after extraction.png)
+![alt text](images/'Picture1 - Sample of Houston Zip Code table after extraction'.png)
 *Figure 1: Sample of Houston Zip Code table after extraction.*
 
 ### Number of COVID-19 cases by ZIP code in Houston

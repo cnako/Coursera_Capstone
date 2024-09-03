@@ -55,36 +55,36 @@ The data from ZipAtlas (ZipAtlas, 2020) was extracted directly from the website 
 
 The data from 'City of Houston COVID-19 Data Hub' (Harris County Public Health, 2021) was downloaded directly as a csv file type. From the initial table, a number of columns have parameters that are not relevant for the analysis itself such as ‘State’ and ‘DATE_MOD’. From the initial 22 columns, 11 were removed to prepare the data for this analysis. At this stage no rows were excluded as there was no empty data points.
 
-![alt text](images/Picture2 - Sample fo Houston COVID-19 Cases Table.png)
+![alt text](images/Picture2.png)
 *Figure 2: Sample of Houston COVID-19 Cases Table.*
 
 ### Commerce data form Foursquare
 
 The Foursquare data (Foursquare, 2021) had to be pulled by Zip Code as JSON file and then combined. In order to do that, the zip code data from ZipAtlas was used as reference to pull the data. Once it was pulled, the data was combined.
 
-![alt text](images/Picture3 - Sample fo Foursquare data combined after pulled by Zip Code.png)
+![alt text](images/Picture3.png)
 *Figure 3: Sample of Foursquare data combined after pulled by Zip Code.*
 
 The categories parameter in the Foursquare are set in a hierarchy (Foursquare, 2021) but when the location data is pulled, only the lowest level is shown in the dataset. This results in over 500 categories in the data pulled while at the highest level of the category hierarchy, there are 10 categories. To enhance the commerce data, the foursquare category hierarchy data was pulled and organized in a table. 
 
-![alt text](images/Picture4 - Sample of foursquare Category Hierarchy.png)
+![alt text](images/Picture4.png)
 *Figure 4: Sample of Foursquare Category Hierarchy*
 
 After the Foursquare category hierarchy, this data was joined to the Foursquare commerce data.
 
-![alt text](images/Picture5 - Sample of foursquare Commerce Data with Category Hierarchy.png)
+![alt text](images/Picture5.png)
 *Figure 5: Sample of Foursquare Commerce Data with Category Hierarchy*
 
 The last step prior to the analysis was to group the Foursquare commerce data by one of the category levels. For this analysis, the data was grouped by the parent category.
 
-![alt text](images/Picture6 - Sample of fourquare commerce data group by Category.png)
+![alt text](images/Picture6.png)
 *Figure 6: Sample of Foursquare commerce data group by Category.*
 
 ### Analysis Table
 
 To prepare the Foursquare commerce data the Zip Code was combined with the Foursquare data. As a later step, this commerce data was merged to the COVID-19 cases for the analysis.
 
-![alt text](images/Picture7 - Analysis table sample.png)
+![alt text](images/Picture7.png)
 *Figure 7: Analysis table sample.*
 
 ## Data Exploration & Methodology
@@ -95,10 +95,10 @@ Once the analysis table is gathered together, it is possible to explore the data
 
 The simple way to verify the relationship between number of venues and cases is to plot them in a scatter plot. Two possible charts are the number of venues against the number of cases and the number of venues against the ratio between number of cases and venues.
 
-![alt text](images/Picture8 - Cross-plot between Venues against Cases.png)
+![alt text](images/Picture8.png)
 *Figure 8: Cross-plot between Venues against Cases*
 
-![alt text](images/Picture9 - Cross-plot between Venues against Rate of Cases per venue.png)
+![alt text](images/Picture9.png)
 *Figure 9: Cross-plot between Venues against Rate of cases per venue*
 
 In the cross-plots it is possible to visually check the relationship between venues and cases. The venues against cases plot doesn’t clearly show a relationship between them. In the other side, the cross-plot between venues against ratio of cases by venue clearly shows that the ratio does not remains constant when venues change as it would be in a linear relationship. As the relationship between venues and COVID cases is not clear, an exploration at a lower level would be valuable.
@@ -107,25 +107,25 @@ In the cross-plots it is possible to visually check the relationship between ven
 
 As mentioned previously, the venue categories in the initial foursquare data table (Foursquare, 2021) are at a very granular level and for this analysis we used the parent category. When the venues are grouped at the parent category it is possible to rank then and start the analysis with the relevant categories. 
 
-![alt text](images/Picture10 - Number of Venues per parent category.png)
+![alt text](images/Picture10.png)
 *Figure 10: Number of venues per parent category*
 
 When a similar cross-plot is done for the top 3 categories, Food, Shop & Service and Outdoors & Recreation, a similar pattern emerges on each of the categories. As with the total venues, the drilled down venue categories don’t show a clear relationship between the number of venues and the number of COVID-19 cases.
 
-![alt text](images/Picture11 - Cross-plots with Food category.png)
+![alt text](images/Picture11.png)
 *Figure 11: Cross-plots with Food category*
 
-![alt text](images/Picture12 - Cross-plots with Shop & Service category.png)
+![alt text](images/Picture12.png)
 *Figure 12: Cross-plots with Shop & Service category*
 
-![alt text](images/Picture13 - Corss-plots with outdoors & regreation category.png)
+![alt text](images/Picture13.png)
 *Figure 13: Cross-plots with Outdoors & Recreation category*
 
 The cross-plot shows that it is not possible to show a clear relationship between the number of COVID-19 cases and the number of venues of a given Zip Code. It would be interesting to drill down even further but this reduces the number of the data points as not every Zip Code has every type of venues. Even at the parent category level, the number of neighborhoods with each category reduces as we move to the categories with less venues overall. 
 
 The plot of the number of venues by type per zip code highlights what was just described.
 
-![alt text](images/Picture14 - Number of venues by type per Zip Code.png)
+![alt text](images/Picture14.png)
 *Figure 14: Number of venues by type per zip code*
 
 ## Results
@@ -134,14 +134,14 @@ The data exploration showed that there’s no clear relationship between COVID-1
 
 It is possible to cluster the neighborhoods by the number of COVID-19 cases and number of venues which allows to visualize how close together the similar clusters are. When this is done as in the map in Figure 15, it is possible to see that out of the 5 clusters, the first 3 with lower levels of COVID-19 cases (red, purple, light blue) are mostly close to each other. While the higher levels of COVID-19 cases (light green and yellow) are spread across the city.
 
-![alt text](images/Picture15 - Houston map clustered by number of COVID cases.png)
+![alt text](images/Picture15.png)
 *Figure 15: Houston map clustered by number of COVID cases*
 
 ## Recommendations
 
 At this point it is not possible to create a final policy based on the number of COVID-19 cases and number of venues by zip code alone. It is clear that using number of venues as the sole parameter to define how to define policies against COVID-19 is not a wise decision. As a follow up for this study, it is recommended to add other parameters that might not be straight away obvious or related to a virus spread such as household income. This can be found in places such as Houston state of health (Houston State of Health, 2021).
 
-![alt text](images/Picture16 - Houston Median Household income by Zip Code.png)
+![alt text](images/Picture16.png)
 *Figure 16: Houston Median Household Income by Zip Code*
 
 ## Conclusion
